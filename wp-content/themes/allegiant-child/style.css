@@ -10,3 +10,13 @@
  Tags:         new menu;
  Text Domain:  allegiant
 */
+
+#breadcrumb{
+	color: black;
+}
+#breadcrumb a{
+	color: black;
+}
+.breadcrumb-separator:before {
+	color: black;
+}
