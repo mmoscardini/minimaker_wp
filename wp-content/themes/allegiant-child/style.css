@@ -4,19 +4,17 @@
  Description:  Parallax One Child Theme
  Author:       Unknown
  Template:     allegiant
- Version:      1.0.3
+ Version:      4.8.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         new menu;
  Text Domain:  allegiant
 */
 
+
+.breadcrumb{
+	display: none;
+}
 #breadcrumb{
-	color: black;
-}
-#breadcrumb a{
-	color: black;
-}
-.breadcrumb-separator:before {
-	color: black;
+	display: none;
 }

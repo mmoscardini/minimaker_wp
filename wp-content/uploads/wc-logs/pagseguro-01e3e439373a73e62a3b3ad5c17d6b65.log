@@ -1,0 +1,39 @@
+07-19-2017 @ 20:15:44 - Requesting token for order 202 with the following data: <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<checkout>
+  <currency>BRL</currency>
+  <reference><![CDATA[MM-202]]></reference>
+  <sender>
+    <email><![CDATA[matheus_moscardini@yahoo.com.br]]></email>
+    <name><![CDATA[Matheus Moscardini]]></name>
+    <phone>
+      <areaCode>11</areaCode>
+      <number>984716448</number>
+    </phone>
+  </sender>
+  <shipping>
+    <type>3</type>
+    <address>
+      <street><![CDATA[Carlos sampaio]]></street>
+      <complement><![CDATA[ap 3]]></complement>
+      <postalCode>14020700</postalCode>
+      <city><![CDATA[sp]]></city>
+      <state>SP</state>
+      <country>BRA</country>
+    </address>
+    <cost>0</cost>
+  </shipping>
+  <items>
+    <item>
+      <id>1</id>
+      <description><![CDATA[Kit massinha condutora]]></description>
+      <amount>40.00</amount>
+      <quantity>1</quantity>
+    </item>
+  </items>
+  <redirectURL><![CDATA[http://localhost/minimaker/finalizar/order-received/202?key=wc_order_596fe8200e7be]]></redirectURL>
+  <notificationURL><![CDATA[http://localhost/minimaker/wc-api/WC_PagSeguro_Gateway/]]></notificationURL>
+  <maxUses>1</maxUses>
+  <maxAge>120</maxAge>
+</checkout>
+
+07-19-2017 @ 20:15:45 - PagSeguro Payment Token created with success! The Token is: CB81738B3D3D5338840F3F817D1BBA79
