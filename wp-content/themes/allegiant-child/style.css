@@ -1,6 +1,5 @@
 /*
  Theme Name:   allegiant-child
- Theme URI:    http://example.com/twenty-fifteen-child/
  Description:  Parallax One Child Theme
  Author:       Unknown
  Template:     allegiant
@@ -10,11 +9,116 @@
  Tags:         new menu;
  Text Domain:  allegiant
 */
-
-
-.breadcrumb{
-	display: none;
+/*Início CTA Button*/
+#CTA-Button{
+	background-color:  #ff8000;
+    border: none;
+	border-radius: 7px;
+    color: white;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	font-weight: 600;
+    margin-top: 35px;
+    cursor: pointer;
+	
 }
+
+#CTA-Button span{
+
+	transition: 0.5s;
+}
+
+
+#CTA-Button span:after {
+
+  content: ">>";
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#CTA-Button:hover {
+	box-shadow: -5px 6px 10px rgba(240,240,240,0.3);
+	 border: 1px solid rgba(255,255,255,0.5);
+ 	 padding-right: 25px;
+	background-color: #FF8C17;
+	transition: 0.5s;
+
+}
+
+#CTA-Button:hover span {
+	letter-spacing: 1px;
+	font-weight: 700;
+	padding-right: 25px;
+
+}
+
+#CTA-Button:hover span:after {
+  opacity: 1;
+  left: 240px;
+
+}
+
+
+#CTA-Button:hover span:after {
+  opacity: 1;
+  right: 0;
+transition: 0.5s;
+}
+
+/*Fim CTA Button*/
+
+/*Carrinho de compras */
+.cart-contents{
+	float: right !important;
+	font-size: 20px !important;
+	margin: 10px;
+}
+/*Fim carrinho de compras*/
+
+/*Cores das palavras no menu*/
+.menu-main li a{
+	color: #666;
+}
+
+/*Fim cores das palavras no menu*/
+
+/*Deletar breadcrum*/
 #breadcrumb{
 	display: none;
 }
+/*fim Deletar breadcrum*/
+
+/*Page title background*/
+#pagetitle{
+	padding: 60px 0px !important;
+}
+/*Fim Page title background*/
+
+/*Botao finalizar compra*/
+.woocommerce a.button.alt{
+	background-color: #68a22a;
+	border: 2px solid #8fd049;
+}
+.woocommerce a.button.alt:hover{
+	background-color: #8fd049;
+	border: 2px solid #68a22a;
+}
+
+/*FIM Botao finalizar compra*/
+
+/*Produtos Loja*/
+.products{
+	font-size: 1.5em !important;
+	text-align: center !important;
+}
+@media (min-width: 750px){
+	.products li{
+		min-width:250px;
+	}
+}
+
+/*Fim Produtos Loja*/

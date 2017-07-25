@@ -1,4 +1,5 @@
 <?php
+/*Criar tema filho*/
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles',99);
 
 function child_enqueue_styles() {
@@ -16,6 +17,7 @@ if ( get_stylesheet() !== get_template() ) {
     } );
 }
 
+/* Acicionar meta tags a pagina*/
 function add_meta_tags() {
     echo '<meta property="og:title" content="Mini Maker - Kits de brinquedos mão na massa" />';
     echo '<meta property="og:description" content="Novas formas de aprender com base nos conceitos do movimento maker. Kits para construção de brinquedos educativos criativos" />';
@@ -25,5 +27,50 @@ function add_meta_tags() {
     echo '<meta property="og:image" content="../../uploads/2017/07/logo-vermelho.png" />';
 }
 add_action('wp_head', 'add_meta_tags');
+
+/*Add Cart icon and count to header if WC is active*/
+function my_wc_cart_count() {
+ 
+    if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+        $count = WC()->cart->cart_contents_count;
+        ?>
+        <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'Visualizar carrinho' ); ?>">
+        <?php
+
+        if ( $count >= 0 ) {
+            ?>
+            <span class="cart-contents-count">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                <?php echo esc_html( $count ); ?></span>
+            <?php
+        }
+                ?></a><?php
+    }
+
+ 
+}
+add_action( 'cpotheme_header', 'my_wc_cart_count' );
+
+//Atualizar carrinho automaticamente
+function my_header_add_to_cart_fragment( $fragments ) {
+     ob_start();
+
+    $count = WC()->cart->cart_contents_count;
+    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'Visualizar carrinho' ); ?>"><?php
+    if ( $count >= 0 ) {
+        ?>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span class="cart-contents-count"><?php echo esc_html( $count ); 
+        ?></span>
+        <?php            
+    }
+        ?></a><?php
+ 
+    $fragments['a.cart-contents'] = ob_get_clean();
+     
+    return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
 
 ?>
